@@ -1,4 +1,16 @@
 {
+  "name": "v4ex-api-key",
+  "version": "1.0.0-alpha",
+  "description": "V4EX API System: Key microservice.",
+  "repository": "github:v4ex/v4ex-api-key",
+  "author": "V4EX Inc. <v4ex-api-key@v4ex.com> (https://v4ex.com/)",
+  "contributors": [
+    "Xuwei Li <v4ex-api-key@xuwei.li> (https://xuwei.li/)"
+  ],
+  "license": "GPL-3.0",
+  "bin": {
+    "v4ex-api-key": "./cli.js"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^8.2.0",
