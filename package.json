@@ -16,6 +16,7 @@
     "commander": "^8.2.0",
     "dotenv": "^10.0.0",
     "mongoose": "^6.0.5",
-    "v4ex-api-core": "github:v4ex/v4ex-api-core"
+    "v4ex-api-core": "github:v4ex/v4ex-api-core",
+    "v4ex-api-identity": "github:v4ex/v4ex-api-identity"
   }
 }

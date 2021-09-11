@@ -3,7 +3,16 @@
 // Purpose: Provide PublicKey, PublicKeySchema instances.
 
 
-module.exports = ({ mongoose, modelName, env }) => {
+/**
+ * @param {Object} {}
+ *   - @param {*} mongoose (optional)
+ *   - @param {*} modelName (optional)
+ *   - @param {*} env (optional)
+ * @param {*} IdentitySettings (optional)
+ */
+module.exports = ({ mongoose, modelName, env }, IdentitySettings) => {
+  const { Identity } = require('v4ex-api-identity/models/all-identity')(IdentitySettings || {})
+  
   mongoose = mongoose || require('../mongoose')({ env })
   modelName = modelName || 'PublicKey'
 
@@ -15,6 +24,7 @@ module.exports = ({ mongoose, modelName, env }) => {
   } else {
     const Schema = mongoose.Schema
     PublicKeySchema = new Schema({
+      identity: { type: mongoose.ObjectId, ref: Identity, immutable: true },
       key: { type: String, require: true, immutable: true }
     })
     PublicKey = mongoose.model(modelName, PublicKeySchema)
